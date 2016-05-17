@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="JSON_Payload" project="REST_Test" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="core.JSON_Payload" time="2.817">
+    <testcase name="givenUserExists_whenUserInformationIsRetrieved_thenRetrievedResourceIsCorrect" classname="core.JSON_Payload" time="2.817"/>
+  </testsuite>
+</testrun>

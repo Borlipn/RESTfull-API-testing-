@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="All_TestCases" project="REST_Test" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="core.All_TestCases" time="2.563">
+    <testsuite name="core.Test_RestAssert" time="1.988">
+      <testcase name="givenUserDoesNotExists_whenUserInfoIsRetrieved_then404IsReceived" classname="core.Test_RestAssert" time="1.988"/>
+    </testsuite>
+    <testsuite name="core.Over_Headers_HTTP_response" time="0.575">
+      <testcase name="givenRequestWithNoAcceptHeader_whenRequestIsExecuted_thenDefaultResponseContentTypeIsJson" classname="core.Over_Headers_HTTP_response" time="0.575"/>
+    </testsuite>
+  </testsuite>
+</testrun>

@@ -1,0 +1,66 @@
+package core;
+
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.jboss.netty.handler.codec.http.HttpResponse;
+
+import java.io.IOException;
+
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+
+import org.junit.Test;
+
+
+public class HTTP_response {
+
+
+
+	public org.apache.http.HttpResponse response;
+
+	//Testing the HTTP response code - first phase
+
+	@SuppressWarnings("deprecation")
+	public class Test_RestAssert {
+
+		@Test
+
+		public void givenUserDoesNotExists_whenUserInfoIsRetrieved_then404IsReceived()
+
+				throws ClientProtocolException, IOException{
+
+			// Given	
+			String name = "AssssD";
+
+			HttpUriRequest request = new HttpGet( "https://api.github.com/users/" + name );
+
+			
+			@SuppressWarnings("resource")
+			HttpClient http_client=new DefaultHttpClient();
+
+			// When
+
+			HttpResponse httpResponse = (HttpResponse) http_client.execute( request );
+
+			// Then
+
+			RestAssert.assertResponseCodeIs(response, 404); 
+
+		}
+
+		/*public static void assertResponseCodeIs
+
+		( final HttpResponse response, final int expectedCode ){
+
+			final int statusCode = response.getStatusLine().getStatusCode();
+
+			assertEquals( expectedCode, statusCode );
+
+		} 
+		*/
+	}
+
+	}
+
+}

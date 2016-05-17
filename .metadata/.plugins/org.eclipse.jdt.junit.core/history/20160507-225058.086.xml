@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="All_TestCases" project="REST_Test" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="core.All_TestCases" time="1.884">
+    <testsuite name="core.Test_RestAssert" time="1.884">
+      <testcase name="givenUserDoesNotExists_whenUserInfoIsRetrieved_then404IsReceived" classname="core.Test_RestAssert" time="1.884"/>
+    </testsuite>
+  </testsuite>
+</testrun>

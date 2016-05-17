@@ -1,0 +1,59 @@
+package core;
+import java.io.IOException;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.client.HttpClient;
+
+import org.junit.Test;
+
+/* Verify the HTTP response code (Test_RestAssert class)
+   Verify other HTTP headers in the response (Over_Headers_HTTP_response class)
+   Verify the content the payload JSON and XML file   5/7/2016  
+   http://www.baeldung.com/2011/10/13/integration-testing-a-rest-api/ */
+
+
+//Testing the HTTP response code/Testing the Status Code - first phase
+
+@SuppressWarnings("deprecation")
+public class HTTP_response {
+
+	@Test
+
+	public void givenUserDoesNotExists_whenUserInfoIsRetrieved_then404IsReceived()
+
+			throws ClientProtocolException, IOException{
+
+		// Given	
+		String name = "AssssD";
+
+		HttpUriRequest request = new HttpGet( "https://api.github.com/users/" + name );
+
+		
+		@SuppressWarnings("resource")
+		HttpClient http_client=new DefaultHttpClient();
+
+		// When
+
+		HttpResponse httpResponse = http_client.execute( request );
+
+		// Then
+
+		RestAssert.assertResponseCodeIs( httpResponse, 404 );
+
+	}
+
+	/*public static void assertResponseCodeIs
+
+	( final HttpResponse response, final int expectedCode ){
+
+		final int statusCode = response.getStatusLine().getStatusCode();
+
+		assertEquals( expectedCode, statusCode );
+
+	} 
+	*/
+}

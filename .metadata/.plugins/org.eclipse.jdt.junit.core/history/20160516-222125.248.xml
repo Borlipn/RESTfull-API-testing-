@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="All_TestCases" project="REST_Test" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="core.All_TestCases" time="3.753">
+    <testsuite name="core.HTTP_response" time="2.153">
+      <testcase name="givenUserDoesNotExists_whenUserInfoIsRetrieved_then404IsReceived" classname="core.HTTP_response" time="2.153"/>
+    </testsuite>
+    <testsuite name="core.Over_Headers_HTTP_response" time="0.693">
+      <testcase name="givenRequestWithNoAcceptHeader_whenRequestIsExecuted_thenDefaultResponseContentTypeIsJson" classname="core.Over_Headers_HTTP_response" time="0.693"/>
+    </testsuite>
+    <testsuite name="core.JSON_Payload" time="0.907">
+      <testcase name="givenUserExists_whenUserInformationIsRetrieved_thenRetrievedResourceIsCorrect" classname="core.JSON_Payload" time="0.907"/>
+    </testsuite>
+  </testsuite>
+</testrun>

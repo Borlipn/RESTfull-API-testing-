@@ -1,0 +1,21 @@
+package core;
+
+import static org.junit.Assert.assertEquals;
+import org.apache.http.HttpResponse;
+
+
+public class RestAssert {
+
+		public static void assertResponseCodeIs
+		
+			   ( final HttpResponse response, final int expectedCode ){
+		
+			   final int statusCode = response.getStatusLine().getStatusCode();
+		
+			   assertEquals( expectedCode, statusCode );
+			   System.out.println("Expected Code :" + expectedCode + "Status Code :" + statusCode);
+		
+			}	
+	}
+
+

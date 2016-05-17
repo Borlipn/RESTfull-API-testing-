@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="HTTP_response" project="REST_Test" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="core.HTTP_response" time="2.53">
+    <testcase name="givenUserDoesNotExists_whenUserInfoIsRetrieved_then404IsReceived" classname="core.HTTP_response" time="2.53"/>
+  </testsuite>
+</testrun>
