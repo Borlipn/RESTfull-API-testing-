@@ -6,7 +6,7 @@ import org.junit.runners.Suite.SuiteClasses;
 
 /*
  The main goal is to provide an introduction to testing the basic correctness of  the API – and
- we’re going to be using the latest version of the GitHub REST API for the examples.
+ we’re using the latest version of the GitHub REST API for the examples.
 For an internal application, this kind of testing will usually run as a late step in a 
 Continuous Integration process, consuming the REST API after it has already been deployed.
 When testing a REST resource, there are usually a few orthogonal responsibilities the tests 

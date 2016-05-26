@@ -6,14 +6,16 @@ import java.io.IOException;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
+//import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpUriRequest;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.util.EntityUtils;
+import org.apache.http.entity.ContentType;
+//import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
+//import org.apache.http.util.EntityUtils;
 import org.junit.Test;
 
-@SuppressWarnings("deprecation")
+//@SuppressWarnings("deprecation")
 public class Over_Headers_HTTP_response {
 	
 	/* Verify the HTTP response code (HTTP_response class)
@@ -23,9 +25,9 @@ public class Over_Headers_HTTP_response {
 
 	// Testing other headers of the HTTP response/Testing the Media Type - second phase
 	
-	private Object httpClient;
+	//private Object httpClient;
 
-	@Test
+/*	@Test  // version 1
 	public void givenRequestWithNoAcceptHeader_whenRequestIsExecuted_thenDefaultResponseContentTypeIsJson()
       throws ClientProtocolException, IOException{
 	 
@@ -44,7 +46,7 @@ public class Over_Headers_HTTP_response {
  	   String mimeType = EntityUtils.getContentMimeType(httpResponse.getEntity() );
  
 	   assertEquals( jsonMimeType, mimeType );
- 
+	   System.out.println("httpResponse :"    +  mimeType );
 	}
 
 	public Object getHttpClient() {
@@ -53,7 +55,22 @@ public class Over_Headers_HTTP_response {
 
 	public void setHttpClient(Object httpClient) {
 		this.httpClient = httpClient;
-	}
+	}*/
+    @Test // version 2
+    public void givenRequestWithNoAcceptHeader_whenRequestIsExecuted_thenDefaultResponseContentTypeIsJson() throws ClientProtocolException, IOException {
+        // Given
+        final String jsonMimeType = "application/json";
+        final HttpUriRequest request = new HttpGet("https://api.github.com/users/Borlipn");
 
+        // When
+        final HttpResponse response = HttpClientBuilder.create().build().execute(request);
+
+        // Then
+        final String mimeType = ContentType.getOrDefault(response.getEntity()).getMimeType();
+        assertEquals(jsonMimeType, mimeType);
+        System.out.println("httpResponse :"    +  mimeType );
+    }
 
 }
+
+

@@ -24,6 +24,7 @@ import org.junit.Test;
 
 public class HTTP_response {
 	//Testing the Status Code
+	
 	@Test
 
 	public void givenUserDoesNotExists_whenUserInfoIsRetrieved_then404IsReceived()
